@@ -6,11 +6,11 @@ using FruitSchool.Models;
 
 namespace FruitSchool.Logic
 {
-    public class ShoppingCart
+    public class ShoppingCart : IDisposable
     {
         public string shoppingCartID { get; set; }
         public const string CartSessionKey = "CartID";
-        private ProductContext _db = new ProductContext();
+        private FruitSchoolContext _db = new FruitSchoolContext();
 
         public void AddToCart (int id)
         {
@@ -35,6 +35,16 @@ namespace FruitSchool.Logic
             }
             _db.SaveChanges();
         }
+
+        public void Dispose()
+        {
+            if (_db != null)
+            {
+                _db.Dispose();
+                _db = null;
+            }
+        }
+
         public string GetCartId()
         {
             if (HttpContext.Current.Session[CartSessionKey] == null)
@@ -51,6 +61,9 @@ namespace FruitSchool.Logic
             }
             return HttpContext.Current.Session[CartSessionKey].ToString();
         }
-    
+        public List<CartItem> GetCartItems()
+        {
+            return _db.ShoppingCartItems.Where(c => c.cartId == GetCartId()).ToList();
+        }
     }
 }

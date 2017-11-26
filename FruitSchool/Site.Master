@@ -44,7 +44,7 @@
                 </p>
             </div>
             <div class="float-right">
-                <section id="login">
+<%--                <section id="login">
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul>
@@ -60,12 +60,13 @@
                             </p>
                         </LoggedInTemplate>
                     </asp:LoginView>
-                </section>
+                </section>--%>
                 <nav>
                     <ul id="menu">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" hreg=""</li>
+                        <%--<li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>--%>
                     </ul>
                 </nav>
             </div>

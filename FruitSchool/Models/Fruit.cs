@@ -10,5 +10,7 @@ namespace FruitSchool.Models
         public int fruitID { get; set; }
         public string title { get; set; }
         public decimal price { get; set; }
+        public string imageLocation { get; set; }
+
     }
 }
