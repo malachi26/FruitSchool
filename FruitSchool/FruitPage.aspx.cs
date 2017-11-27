@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using FruitSchool.Models;
+using FruitSchool.Logic;
 
 namespace FruitSchool
 {
@@ -14,5 +15,25 @@ namespace FruitSchool
         {
 
         }
+
+        //protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        //{
+        //    using (ShoppingCart cart = new ShoppingCart())
+        //    {
+        //        var itemID = 
+                
+        //        cart.AddToCart(Convert.ToInt32(itemID));
+
+        //    }
+        //}
+
+        //protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    using (ShoppingCart cart = new ShoppingCart())
+        //    {
+                
+        //    }
+        //}
+        
     }
 }
