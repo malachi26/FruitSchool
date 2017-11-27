@@ -7,7 +7,7 @@ namespace FruitSchool.Models
     public class FruitSchoolContext : DbContext
     {
         public FruitSchoolContext()
-            : base("name=FruitSchool")
+            : base("name=FruitSchoolContext")
         {
         }
 
