@@ -11,7 +11,10 @@ namespace FruitSchool
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["nameOnOrder"] != null)
+            {
+                Gratitude.Text = "Thank you for buying our Fruit and supporting the Kids, " + Session["nameOnOrder"].ToString() + "!";
+            }
         }
     }
 }

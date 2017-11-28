@@ -12,7 +12,7 @@
                     <asp:Label ID="titleLabel" runat="server" CssClass="col-sm-4" Text='<%# Eval("title") %>' />
                 </td>
                 <td Class="col-sm-4" >
-                    <asp:Label ID="priceLabel" runat="server" CssClass="col-sm-4" Text='<%# Eval("price") %>' />
+                    <asp:Label ID="priceLabel" runat="server" CssClass="col-sm-4" Text='<%# Eval("price", "{0:c}") %>' />
                 </td>
                 <td Class="col-sm-4" >
                     <asp:Image ID="FruitImage" runat="server" CssClass="col-sm-6"  ImageUrl='<%# Eval("imageLocation") %>'  />
@@ -70,7 +70,7 @@
                     <asp:Label ID="titleLabel" runat="server" Text='<%# Eval("title") %>' />
                 </td>
                 <td Class="col-sm-4" >
-                    <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
+                    <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price", "{0:c}") %>' />
                 </td>
                 <td Class="col-sm-4" >
                     <asp:Image ID="FruitImage" runat="server" CssClass="col-sm-6"  ImageUrl='<%# Eval("imageLocation") %>'  />
@@ -107,7 +107,7 @@
                     <asp:Label ID="titleLabel" runat="server" Text='<%# Eval("title") %>' />
                 </td>
                 <td Class="col-sm-3" >
-                    <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
+                    <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price", "{0:c}") %>' />
                 </td>
                 <td Class="col-sm-3" >
                     <asp:Image ID="FruitImage" runat="server" CssClass="col-sm-4" ImageUrl='<%# Eval("imageLocation") %>'  />

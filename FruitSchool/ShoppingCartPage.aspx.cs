@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using FruitSchool.Models;
 
 namespace FruitSchool
 {
@@ -16,6 +17,7 @@ namespace FruitSchool
                 SqlDataSource1.SelectCommand = "ShoppingCartItems";
                 SqlDataSource1.SelectCommandType = SqlDataSourceCommandType.StoredProcedure;
                 SqlDataSource1.SelectParameters.Add("CartID", Session["CartID"].ToString());
+
             }
             else
             {
@@ -23,10 +25,29 @@ namespace FruitSchool
             }
         }
 
-        public void SubmitOrder (string name)
+        public void SubmitOrder(string name)
         {
             Session["nameOnOrder"] = name;
             Response.Redirect("OrderReceivedPage.aspx");
+        }
+
+        protected void SubmitOrder_Click(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                using (var db = new FruitSchoolContext())
+                {
+                    var cartID = Guid.Parse(Session["CartID"].ToString());
+                    var cart = from c in db.Cart
+                               where c.CartID == cartID
+                               select c;
+
+                    Session["nameOnOrder"] = NameOnOrder.Value;
+                    Session["ConfirmedOrder"] = cart;
+                    Response.Redirect("OrderReceivedPage.aspx");
+
+                }
+            }
         }
     }
 }

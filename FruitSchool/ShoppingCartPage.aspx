@@ -116,16 +116,16 @@
         <div class="row">
             <div class="col-sm-6">
                 <label>Enter your name to submit order</label>
-                <input type="text" id="nameOnOrder"/>
-         
-                <input type="button" id="submitOrder" onclick="submitOrder()" value="Submit Order" class="btn-info btn-lg" />
+                <input runat="server" type="text" id="NameOnOrder"/>
+                <asp:Button runat="server" ID="SubmitOrder" CommandName="SubmitOrder" UseSubmitBehavior="true" OnClick="SubmitOrder_Click" Text="Submit your order" />
+               
 
             </div>
         </div>
     </div>
-    <script type="text/javascript">
+<%--    <script type="text/javascript">
         {
             $('#submitOrder').click();
         }
-    </script>
+    </script>--%>
 </asp:Content>
