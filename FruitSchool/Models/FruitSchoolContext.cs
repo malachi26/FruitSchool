@@ -11,8 +11,9 @@ namespace FruitSchool.Models
         {
         }
 
-        public DbSet<CartItem> ShoppingCartItems { get; set; }
+        //public DbSet<CartItem> ShoppingCartItems { get; set; }
         public DbSet<Fruit> Fruits { get; set; }
-       
+        public DbSet<Cart> Cart { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
     }
 }

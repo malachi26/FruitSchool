@@ -15,24 +15,25 @@ namespace FruitSchool.Logic
         public void AddToCart (int id)
         {
             shoppingCartID = GetCartId();
-            var cartItem = _db.ShoppingCartItems.SingleOrDefault(c => c.cartId == shoppingCartID && c.fruitId == id);
-            if (cartItem == null)
-            {
-                cartItem = new CartItem
+
+            //var cartItem = _db.CartItems.SingleOrDefault(c => c.CartID == shoppingCartID && c.FruitID == id);
+            //if (cartItem == null)
+            //{
+                var cartItem = new CartItem
                 {
-                    itemId = Guid.NewGuid().ToString(),
-                    fruitId = id,
-                    cartId = shoppingCartID,
-                    fruit = _db.Fruits.SingleOrDefault(f => f.fruitID == id),
-                    quantity = 1,
-                    dateCreated = DateTime.UtcNow
+                    CartItemID = Guid.NewGuid().ToString(),
+                    FruitID = id,
+                    CartID = shoppingCartID,
+                    //fruit = _db.Fruits.SingleOrDefault(f => f.FruitID == id),
+                    //Quantity = 1,
+                    DateCreated = DateTime.UtcNow
                 };
-                _db.ShoppingCartItems.Add(cartItem);
-            }
-            else
-            {
-                cartItem.quantity++;
-            }
+                _db.CartItems.Add(cartItem);
+            //}
+            //else
+            //{
+            //    cartItem.quantity++;
+            //}
             _db.SaveChanges();
         }
 
@@ -55,15 +56,22 @@ namespace FruitSchool.Logic
                 }
                 else
                 {
+                    
                     Guid tempCartID = Guid.NewGuid();
                     HttpContext.Current.Session[CartSessionKey] = tempCartID.ToString();
+                    Cart newCart = new Cart
+                    {
+                        CartID = tempCartID.ToString(),
+                        DateCreated = DateTime.UtcNow
+                    };
+                    _db.Cart.Add(newCart);
                 }
             }
             return HttpContext.Current.Session[CartSessionKey].ToString();
         }
         public List<CartItem> GetCartItems()
         {
-            return _db.ShoppingCartItems.Where(c => c.cartId == GetCartId()).ToList();
+            return _db.CartItems.Where(c => c.CartID == GetCartId()).ToList();
         }
     }
 }

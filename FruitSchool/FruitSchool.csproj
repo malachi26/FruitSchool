@@ -192,11 +192,14 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="FruitPage.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\FruitImages\Banana.jpg" />
+    <Content Include="Images\FruitImages\coconut.jpg" />
     <Content Include="Images\FruitImages\lg-kiwi-man-spoon.png" />
+    <Content Include="Images\FruitImages\Orange.jpg" />
+    <Content Include="Images\FruitImages\pineapple.jpg" />
     <Content Include="Images\FruitImages\RedApple.jpg" />
     <Content Include="Images\FruitImages\strawberry.jpg" />
     <Content Include="Images\FruitImages\watermelon.jpg" />
@@ -211,7 +214,6 @@
     <Content Include="Images\orderedList7.png" />
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
-    <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
@@ -243,6 +245,7 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="ShoppingCartPage.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -324,15 +327,9 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FruitPage.aspx.cs">
-      <DependentUpon>FruitPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="FruitPage.aspx.designer.cs">
-      <DependentUpon>FruitPage.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Logic\Store.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\FruitSchoolContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -341,6 +338,13 @@
     <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Fruit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingCartPage.aspx.cs">
+      <DependentUpon>ShoppingCartPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShoppingCartPage.aspx.designer.cs">
+      <DependentUpon>ShoppingCartPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
