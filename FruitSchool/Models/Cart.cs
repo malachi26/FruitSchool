@@ -13,6 +13,6 @@ namespace FruitSchool.Models
         public string CartID { get; set; }
         public System.DateTime DateCreated { get; set; }
 
-        //public ICollection<CartItem> CartItems { get; set; }
+        public ICollection<CartItem> CartItems { get; set; }
     }
 }

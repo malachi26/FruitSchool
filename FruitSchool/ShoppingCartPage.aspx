@@ -115,9 +115,6 @@
             </tr>
         </SelectedItemTemplate>
     </asp:ListView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TutorialDatabaseConnectionString %>" SelectCommand="SELECT Fruits.title, Fruits.price, Fruits.imageLocation FROM dbo.CartItems INNER JOIN dbo.Fruits ON CartItems.fruitId = Fruits.fruitID WHERE (CartItems.cartId = @cartId)">
-        <SelectParameters>
-            <asp:SessionParameter Name="cartId" SessionField="CartSessionKey" />
-        </SelectParameters>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TutorialDatabaseConnectionString %>">
     </asp:SqlDataSource>
 </asp:Content>

@@ -11,7 +11,16 @@ namespace FruitSchool
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["CartID"] != null)
+            {
+                SqlDataSource1.SelectCommand = "ShoppingCartItems";
+                SqlDataSource1.SelectCommandType = SqlDataSourceCommandType.StoredProcedure;
+                SqlDataSource1.SelectParameters.Add("CartID", Session["CartID"].ToString());
+            }
+            else
+            {
+                Response.Redirect("Default.aspx");
+            }
         }
     }
 }
