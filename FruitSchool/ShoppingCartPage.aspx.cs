@@ -22,5 +22,11 @@ namespace FruitSchool
                 Response.Redirect("Default.aspx");
             }
         }
+
+        public void SubmitOrder (string name)
+        {
+            Session["nameOnOrder"] = name;
+            Response.Redirect("OrderReceivedPage.aspx");
+        }
     }
 }

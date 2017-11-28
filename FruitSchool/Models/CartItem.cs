@@ -12,13 +12,13 @@ namespace FruitSchool.Models
     public class CartItem
     {
         [Key]
-        public string CartItemID { get; set; }
+        public Guid CartItemID { get; set; }
         public int FruitID { get; set; }
-        public string CartID { get; set; }
+        public Guid CartID { get; set; }
         public System.DateTime DateCreated { get; set; }
-        
-        //[ForeignKey("CartID")]
-        //public Cart Cart { get; set; }
+
+        [ForeignKey("CartID")]
+        public Cart Cart { get; set; }
         [ForeignKey("FruitID")]
         public Fruit Fruit { get; set; }
 

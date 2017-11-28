@@ -8,7 +8,7 @@ namespace FruitSchool.Logic
 {
     public class ShoppingCart : IDisposable
     {
-        public string shoppingCartID { get; set; }
+        public Guid shoppingCartID { get; set; }
         public const string CartSessionKey = "CartID";
         private FruitSchoolContext _db = new FruitSchoolContext();
 
@@ -21,7 +21,7 @@ namespace FruitSchool.Logic
             //{
                 var cartItem = new CartItem
                 {
-                    CartItemID = Guid.NewGuid().ToString(),
+                    CartItemID = Guid.NewGuid(),
                     FruitID = id,
                     CartID = shoppingCartID,
                     //fruit = _db.Fruits.SingleOrDefault(f => f.FruitID == id),
@@ -46,7 +46,7 @@ namespace FruitSchool.Logic
             }
         }
 
-        public string GetCartId()
+        public Guid GetCartId()
         {
             if (HttpContext.Current.Session[CartSessionKey] == null)
             { 
@@ -56,18 +56,18 @@ namespace FruitSchool.Logic
                 }
                 else
                 {
-                    
                     Guid tempCartID = Guid.NewGuid();
                     HttpContext.Current.Session[CartSessionKey] = tempCartID.ToString();
                     Cart newCart = new Cart
                     {
-                        CartID = tempCartID.ToString(),
+                        CartID = tempCartID,
                         DateCreated = DateTime.UtcNow
                     };
                     _db.Cart.Add(newCart);
                 }
             }
-            return HttpContext.Current.Session[CartSessionKey].ToString();
+                       
+            return Guid.Parse(HttpContext.Current.Session[CartSessionKey].ToString());
         }
         public List<CartItem> GetCartItems()
         {
