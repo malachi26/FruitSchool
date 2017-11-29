@@ -12,6 +12,7 @@ namespace FruitSchool.Models
         [Key]
         public Guid CartID { get; set; }
         public System.DateTime DateCreated { get; set; }
+        public string UserName { get; set; }
 
         public ICollection<CartItem> CartItems { get; set; }
     }

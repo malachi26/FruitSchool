@@ -9,16 +9,16 @@
         <AlternatingItemTemplate>
             <tr>
                 <td Class="col-sm-2" >
-                    <asp:Label ID="titleLabel" runat="server" CssClass="col-sm-4" Text='<%# Eval("title") %>' />
+                    <asp:Label ID="titleLabel" runat="server" Text='<%# Eval("title") %>' />
                 </td>
                 <td Class="col-sm-2" >
-                    <asp:Label ID="priceLabel" runat="server" CssClass="col-sm-4" Text='<%# Eval("price", "{0:c}") %>' />
+                    <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price", "{0:c}") %>' />
                 </td>
                 <td Class="col-sm-6" >
                     <asp:Image ID="FruitImage" runat="server" CssClass="col-sm-6"  ImageUrl='<%# Eval("imageLocation") %>'  />
                 </td>
                 <td Class="col-sm-2" >
-                    <asp:Button ID="AddToCart" runat="server" CssClass="col-sm-4" OnCommand="AddFruitToCart" CommandArgument='<%# Eval("fruitID") %>' Text="Add To Cart" OnClientClick="AddFruitToCart" />
+                    <asp:Button ID="AddToCart" runat="server" OnCommand="AddFruitToCart" CommandArgument='<%# Eval("fruitID") %>' Text="Add To Cart" OnClientClick="AddFruitToCart" />
                 </td>
             </tr>
         </AlternatingItemTemplate>
