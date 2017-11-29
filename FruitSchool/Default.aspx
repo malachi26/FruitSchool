@@ -7,23 +7,23 @@
 
     <asp:ListView ID="ListView1" runat="server" DataKeyNames="fruitID" DataSourceID="SqlDataSource1">
         <AlternatingItemTemplate>
-            <tr style="background-color: #FFFFFF;color: #284775;">
-                <td Class="col-sm-4" >
+            <tr>
+                <td Class="col-sm-2" >
                     <asp:Label ID="titleLabel" runat="server" CssClass="col-sm-4" Text='<%# Eval("title") %>' />
                 </td>
-                <td Class="col-sm-4" >
+                <td Class="col-sm-2" >
                     <asp:Label ID="priceLabel" runat="server" CssClass="col-sm-4" Text='<%# Eval("price", "{0:c}") %>' />
                 </td>
-                <td Class="col-sm-4" >
+                <td Class="col-sm-6" >
                     <asp:Image ID="FruitImage" runat="server" CssClass="col-sm-6"  ImageUrl='<%# Eval("imageLocation") %>'  />
                 </td>
-                <td Class="col-sm-4" >
+                <td Class="col-sm-2" >
                     <asp:Button ID="AddToCart" runat="server" CssClass="col-sm-4" OnCommand="AddFruitToCart" CommandArgument='<%# Eval("fruitID") %>' Text="Add To Cart" OnClientClick="AddFruitToCart" />
                 </td>
             </tr>
         </AlternatingItemTemplate>
         <EditItemTemplate>
-            <tr style="background-color: #999999;">
+            <tr>
                 <td Class="col-sm-4" >
                     <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
                     <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
@@ -65,17 +65,17 @@
             </tr>
         </InsertItemTemplate>
         <ItemTemplate>
-            <tr style="background-color: #E0FFFF;color: #333333;">
-                <td Class="col-sm-4" >
+            <tr>
+                <td Class="col-sm-2" >
                     <asp:Label ID="titleLabel" runat="server" Text='<%# Eval("title") %>' />
                 </td>
-                <td Class="col-sm-4" >
+                <td Class="col-sm-2" >
                     <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price", "{0:c}") %>' />
                 </td>
-                <td Class="col-sm-4" >
+                <td Class="col-sm-6" >
                     <asp:Image ID="FruitImage" runat="server" CssClass="col-sm-6"  ImageUrl='<%# Eval("imageLocation") %>'  />
                 </td>
-                <td Class="col-sm-4" >
+                <td Class="col-sm-2" >
                     <asp:Button ID="AddToCart" runat="server" OnCommand="AddFruitToCart" CommandArgument='<%# Eval("fruitID") %>' Text="Add To Cart" />
                 </td>
             </tr>
@@ -85,7 +85,7 @@
                 <tr runat="server">
                     <td runat="server">
                         <table id="itemPlaceholderContainer" runat="server" border="1" class="table-bordered table-striped table-responsive">
-                            <tr runat="server" style="background-color: #E0FFFF;color: #333333;">
+                            <tr runat="server">
                                 <th runat="server">Title</th>
                                 <th runat="server">Price</th>
                                 <th runat="server">Sample Image of Product</th>

@@ -16,6 +16,7 @@ namespace FruitSchool.Models
         public int FruitID { get; set; }
         public Guid CartID { get; set; }
         public System.DateTime DateCreated { get; set; }
+        public int Quantity { get; set; }
 
         [ForeignKey("CartID")]
         public Cart Cart { get; set; }

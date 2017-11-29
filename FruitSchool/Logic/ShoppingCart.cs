@@ -16,24 +16,24 @@ namespace FruitSchool.Logic
         {
             shoppingCartID = GetCartId();
 
-            //var cartItem = _db.CartItems.SingleOrDefault(c => c.CartID == shoppingCartID && c.FruitID == id);
-            //if (cartItem == null)
-            //{
-            var cartItem = new CartItem
+            var cartItem = _db.CartItems.SingleOrDefault(c => c.CartID == shoppingCartID && c.FruitID == id);
+            if (cartItem == null)
             {
-                CartItemID = Guid.NewGuid(),
-                FruitID = id,
-                CartID = shoppingCartID,
-                //fruit = _db.Fruits.SingleOrDefault(f => f.FruitID == id),
-                //Quantity = 1,
-                DateCreated = DateTime.UtcNow
-            };
-            _db.CartItems.Add(cartItem);
-            //}
-            //else
-            //{
-            //    cartItem.quantity++;
-            //}
+                cartItem = new CartItem
+                {
+                    CartItemID = Guid.NewGuid(),
+                    FruitID = id,
+                    CartID = shoppingCartID,
+                    Fruit = _db.Fruits.SingleOrDefault(f => f.FruitID == id),
+                    Quantity = 1,
+                    DateCreated = DateTime.UtcNow
+                };
+                _db.CartItems.Add(cartItem);
+            }
+            else
+            {
+                cartItem.Quantity++;
+            }
             _db.SaveChanges();
         }
 

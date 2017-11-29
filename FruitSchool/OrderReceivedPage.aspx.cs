@@ -14,6 +14,11 @@ namespace FruitSchool
             if (Session["nameOnOrder"] != null)
             {
                 Gratitude.Text = "Thank you for buying our Fruit and supporting the Kids, " + Session["nameOnOrder"].ToString() + "!";
+                Session.Clear();
+            }
+            else
+            {
+                Response.Redirect("ShoppingCartPage.aspx");
             }
         }
     }

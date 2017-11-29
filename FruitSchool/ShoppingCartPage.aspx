@@ -4,16 +4,20 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <a href="Default.aspx">Back to Shopping</a>
     <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" Class="">
         <AlternatingItemTemplate>
             <tr>
-                <td class="col-sm-4">
+                <td class="col-sm-2">
+                    <asp:Label ID="QuantityLabel" runat="server" Text='<%# Eval("Quantity") %>' />
+                </td>
+                <td class="col-sm-2">
                     <asp:Label ID="titleLabel" runat="server" Text='<%# Eval("title") %>' />
                 </td>
-                <td class="col-sm-4">
+                <td class="col-sm-2">
                     <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price") %>' />
                 </td>
-                <td class="col-sm-4">
+                <td class="col-sm-6">
                     <asp:Image ID="FruitImage" runat="server" CssClass="col-sm-6" ImageUrl='<%# Eval("imageLocation") %>' />
                 </td>
             </tr>
@@ -23,6 +27,9 @@
                 <td class="col-sm-4">
                     <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
                     <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
+                </td>
+                <td class="col-sm-4">
+                    <asp:TextBox ID="QuantityTextBox" runat="server" Text='<%# Bind("Quantity") %>' />
                 </td>
                 <td class="col-sm-4">
                     <asp:TextBox ID="titleTextBox" runat="server" Text='<%# Bind("title") %>' />
@@ -49,6 +56,9 @@
                     <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
                 </td>
                 <td class="col-sm-4">
+                    <asp:TextBox ID="QuantityTextBox" runat="server" Text='<%# Bind("Quantity") %>' />
+                </td>
+                <td class="col-sm-4">
                     <asp:TextBox ID="titleTextBox" runat="server" Text='<%# Bind("title") %>' />
                 </td>
                 <td class="col-sm-4">
@@ -61,13 +71,16 @@
         </InsertItemTemplate>
         <ItemTemplate>
             <tr >
-                <td class="col-sm-4">
+                <td class="col-sm-2">
+                    <asp:Label ID="QuantityLabel" runat="server" Text='<%# Eval("Quantity") %>' />
+                </td>
+                <td class="col-sm-2">
                     <asp:Label ID="titleLabel" runat="server" Text='<%# Eval("title") %>' />
                 </td>
-                <td class="col-sm-4">
+                <td class="col-sm-2">
                     <asp:Label ID="priceLabel" runat="server" Text='<%# Eval("price", "{0:c}") %>' />
                 </td>
-                <td class="col-sm-4">
+                <td class="col-sm-6">
                     <asp:Image ID="FruitImage" runat="server" CssClass="col-sm-6" ImageUrl='<%# Eval("imageLocation") %>' />
 
                 </td>
@@ -79,6 +92,7 @@
                     <td runat="server">
                         <table id="itemPlaceholderContainer" runat="server" border="0" class="table-bordered table-striped table-responsive">
                             <tr runat="server">
+                                <th runat="server">Quantity</th>
                                 <th runat="server">Name of Product</th>
                                 <th runat="server">Price</th>
                                 <th runat="server">Sample Image</th>
@@ -91,8 +105,6 @@
                 <tr runat="server">
                     <td runat="server" style="text-align: center; background-color: #5D7B9D; font-family: Verdana, Arial, Helvetica, sans-serif; color: #FFFFFF"></td>
                 </tr>
-              
-
             </table>
         </LayoutTemplate>
         <SelectedItemTemplate>
