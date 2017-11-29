@@ -5,28 +5,29 @@ namespace FruitSchool.Models
     using System.Linq;
     using System.ComponentModel.DataAnnotations;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations.Schema;
 
 
 
     public class CartItem
     {
         [Key]
-        public string itemId { get; set; }
-        public string cartId { get; set; }
-        public int quantity { get; set; }
-        public System.DateTime dateCreated { get; set; }
-        public int fruitId { get; set; }
-        public virtual Fruit fruit { get; set; }
+        public Guid CartItemID { get; set; }
+        public int FruitID { get; set; }
+        public Guid CartID { get; set; }
+        public System.DateTime DateCreated { get; set; }
+        public int Quantity { get; set; }
+
+        [ForeignKey("CartID")]
+        public Cart Cart { get; set; }
+        [ForeignKey("FruitID")]
+        public Fruit Fruit { get; set; }
+
+        
     }
 
 
-    public class Order
-    {
-        public int orderID { get; set; }
-        public string name { get; set; }
-        public List<CartItem> cartItems { get; set; }
 
-    }
 
     // Add a DbSet for each entity type that you want to include in your model. For more information 
     // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
