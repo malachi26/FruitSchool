@@ -120,11 +120,17 @@
         </SelectedItemTemplate>
 
     </asp:ListView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TutorialDatabaseConnectionString %>" SelectCommand="SELECT [fruitID], [title], [price], [imageLocation] FROM [Fruits]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:FruitSchoolContext %>' SelectCommand="SELECT * FROM [Fruits]"></asp:SqlDataSource>
     <div class="container">
         <div class="row">
             <div class="col-sm-4"><a href="ShoppingCartPage.aspx" class="btn-info btn-lg">Ready to Check out?</a></div>
         </div>
     </div>
     
+    <script type="text/javascript">
+        {
+
+        }
+    </script>
+
 </asp:Content>
