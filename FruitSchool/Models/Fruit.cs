@@ -7,10 +7,10 @@ namespace FruitSchool.Models
 {
     public class Fruit
     {
-        public int fruitID { get; set; }
-        public string title { get; set; }
-        public decimal price { get; set; }
-        public string imageLocation { get; set; }
+        public int FruitID { get; set; }
+        public string Title { get; set; }
+        public decimal Price { get; set; }
+        public string ImageLocation { get; set; }
 
     }
 }

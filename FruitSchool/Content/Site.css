@@ -645,6 +645,12 @@ tr.pager td {
         padding: 10px;
     }
 
+    .cartItems {
+        width:200px;
+        height:200px;
+        
+    }
+
     /* page content */
     article, aside {
         float: none;
