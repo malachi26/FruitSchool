@@ -17,7 +17,7 @@ namespace FruitSchool
                 SqlDataSource1.SelectCommand = "ShoppingCartItems";
                 SqlDataSource1.SelectCommandType = SqlDataSourceCommandType.StoredProcedure;
                 SqlDataSource1.SelectParameters.Add("CartID", Session["CartID"].ToString());
-
+                //EntityDataSource.
             }
             else
             {
@@ -38,11 +38,15 @@ namespace FruitSchool
                 using (var db = new FruitSchoolContext())
                 {
                     var cartID = Guid.Parse(Session["CartID"].ToString());
-                    var cart = from c in db.Cart
-                               where c.CartID == cartID
-                               select c;
-
+                    //var cart = from c in db.Cart
+                               //where c.CartID == cartID
+                               //select c;
+                    //Cart cartEntity = cart as Cart;
+                    //cartEntity.UserName = NameOnOrder.Value;
+                     var cart = db.Cart.First(w => w.CartID == cartID);
+                    cart.UserName = NameOnOrder.Value;
                     Session["nameOnOrder"] = NameOnOrder.Value;
+                    
                     Session["ConfirmedOrder"] = cart;
                     Response.Redirect("OrderReceivedPage.aspx");
 

@@ -123,6 +123,7 @@
     </asp:ListView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:FruitSchoolContext %>">
     </asp:SqlDataSource>
+    <asp:EntityDataSource ID="EntityDataSource" runat="server"></asp:EntityDataSource>
 
     <div class="container">
         <div class="row">
