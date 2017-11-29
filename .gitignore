@@ -156,11 +156,6 @@ $RECYCLE.BIN/
 .DS_Store
 
 #hiding certain information 
-web.config
-Web.config
-Web.Config
-web.Config
-Web.Debug.Config
-Web.Release.Config
+
 
 FruitSchool/Properties/PublishProfiles/
