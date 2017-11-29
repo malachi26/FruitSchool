@@ -31,7 +31,7 @@ namespace FruitSchool
             Response.Redirect("OrderReceivedPage.aspx");
         }
 
-        protected void SubmitOrder_Click(object sender, EventArgs e)
+        protected void SubmitFruitOrder_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
             {

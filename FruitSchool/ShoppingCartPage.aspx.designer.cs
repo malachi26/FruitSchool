@@ -40,12 +40,12 @@ namespace FruitSchool {
         protected global::System.Web.UI.HtmlControls.HtmlInputText NameOnOrder;
         
         /// <summary>
-        /// SubmitOrder control.
+        /// SubmitFruitOrder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SubmitOrder;
+        protected global::System.Web.UI.WebControls.Button SubmitFruitOrder;
     }
 }

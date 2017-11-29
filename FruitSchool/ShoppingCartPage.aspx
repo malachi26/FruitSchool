@@ -129,9 +129,7 @@
             <div class="col-sm-6">
                 <label>Enter your name to submit order</label>
                 <input runat="server" type="text" id="NameOnOrder"/>
-                <asp:Button runat="server" ID="SubmitOrder" CommandName="SubmitOrder" UseSubmitBehavior="true" OnClick="SubmitOrder_Click" Text="Submit your order" />
-               
-
+                <asp:Button runat="server" ID="SubmitFruitOrder" CommandName="SubmitOrder" UseSubmitBehavior="true" OnClick="SubmitFruitOrder_Click" Text="Submit your order" />
             </div>
         </div>
     </div>
