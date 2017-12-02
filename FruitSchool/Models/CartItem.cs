@@ -21,7 +21,7 @@ namespace FruitSchool.Models
         [ForeignKey("CartID")]
         public Cart Cart { get; set; }
         [ForeignKey("FruitID")]
-        public Fruit Fruit { get; set; }
+        public virtual Fruit Fruit { get; set; }
 
         
     }
